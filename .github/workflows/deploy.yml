@@ -1,12 +1,12 @@
-name: AIO App CI Stage
+name: AIO App CI Integration
 
 on:
   push:
     branches:
-      - main
+      - integration
 jobs:
   deploy:
-    name: Deploy to Stage
+    name: Deploy to Integration
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 1
@@ -48,7 +48,7 @@ jobs:
       - name: Deploy
         env:
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_INTEGRATION }}
-          AIO_RUNTIME_AUTH: ${{ secrets.AIO_RUNTIME_AUTH_INTEGRATION }}
+          AIO_RUNTIME_AUTH: ${{ secrets.AIO_RUNTIME_AUTH_INTEGRATION}}
           AIO_PROJECT_ID: ${{ secrets.AIO_PROJECT_ID_INTEGRATION }}
           AIO_PROJECT_NAME: ${{ secrets.AIO_PROJECT_NAME_INTEGRATION }}
           AIO_PROJECT_ORG_ID: ${{ secrets.AIO_PROJECT_ORG_ID_INTEGRATION }}
