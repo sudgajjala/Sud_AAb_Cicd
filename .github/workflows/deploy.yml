@@ -32,7 +32,7 @@ jobs:
         with:
           os: ${{ matrix.os }}
           command: auth
-          CLIENTID: ${{ secrets.CLIENTID_INTEGRATION }}
+          CLIENTID: ${{ secrets.CLIENTID_INTEGRATION}}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET_INTEGRATION }}
           TECHNICALACCOUNTID: ${{ secrets.TECHNICALACCID_INTEGRATION }}
           IMSORGID: ${{ secrets.IMSORGID_INTEGRATION }}
